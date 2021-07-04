@@ -11,6 +11,7 @@ script = ExtResource( 5 )
 
 [node name="sonido" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -3.029
 
 [node name="reload" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

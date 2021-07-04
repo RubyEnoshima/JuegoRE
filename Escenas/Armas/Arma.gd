@@ -10,46 +10,57 @@ export var retroceso = 105
 var sePuedeDisparar = true
 var recargando = false
 var giro = false
+var disabled = false
 
 func _ready():
 	$fireRate.wait_time = fireRate
 
 func _process(delta):
-	var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
-	if angulo <= 60 and angulo >= -60:
-		if giro:
-			giro = false
-			$Sprite.flip_v = !$Sprite.flip_v
-		look_at(get_global_mouse_position())
-	elif -angulo >= 120 and -angulo <=180 or -angulo >= -180 and -angulo <= -120:
-		if !giro:
-			giro = true
-			$Sprite.flip_v = !$Sprite.flip_v
-		look_at(get_global_mouse_position())
+	if !disabled:
+		var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
+		if angulo <= 60 and angulo >= -60:
+			if giro:
+				giro = false
+				$Sprite.flip_v = !$Sprite.flip_v
+			look_at(get_global_mouse_position())
+		elif -angulo >= 120 and -angulo <=180 or -angulo >= -180 and -angulo <= -120:
+			if !giro:
+				giro = true
+				$Sprite.flip_v = !$Sprite.flip_v
+			look_at(get_global_mouse_position())
+	else:
+		if get_parent().derecha:
+			rotation_degrees = 60
+			$Sprite.flip_v = false
+		else:
+			rotation_degrees = 120
+			$Sprite.flip_v = true
 
 func disparar():
-	if sePuedeDisparar and municionActual>0 and !recargando:
-		var b=Bala.instance()
-		get_parent().get_parent().add_child(b)
-		b.global_position = $Sprite.global_position
-		b.rotate(rotation)
-		$sonido.play()
-		$fireRate.start()
-		if get_parent().derecha:
-			get_parent().velocity.x -= retroceso
-		else:
-			get_parent().velocity.x += retroceso
-			
-		sePuedeDisparar = false
-		municionActual-=1
-	elif !municionActual:
-		if Inventario.balasPistola>0:
-			recargar()
-		else:
-			$no_ammo.play()
-		#$fireRate.start()
-		#sePuedeDisparar = false
-	print(municionActual)
+	if !get_parent().velocity.x:
+		disabled = false
+		if sePuedeDisparar and municionActual>0 and !recargando:
+			var b=Bala.instance()
+			get_parent().get_parent().add_child(b)
+			b.global_position = $Sprite.global_position
+			b.rotate(rotation)
+			$sonido.play()
+			$fireRate.start()
+			if get_parent().derecha:
+				get_parent().velocity.x -= retroceso
+			else:
+				get_parent().velocity.x += retroceso
+				
+			sePuedeDisparar = false
+			municionActual-=1
+		elif !municionActual:
+			if Inventario.balasPistola>0:
+				recargar()
+			else:
+				$no_ammo.play()
+			#$fireRate.start()
+			#sePuedeDisparar = false
+		print(municionActual)
 
 func recargar():
 	if !recargando:

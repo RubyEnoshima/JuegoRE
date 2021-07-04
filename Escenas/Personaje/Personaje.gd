@@ -10,7 +10,6 @@ export var defensa = 1
 
 var derecha = true
 var corriendo = false
-var mouse
 var velocity = Vector2.ZERO
 
 func _ready():
@@ -22,12 +21,22 @@ func _ready():
 func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("mov_der"):
-		
+		if !$pisadas.playing: $pisadas.play()
 		velocity.x += speed
+		$Arma.disabled = true
+		#if !derecha:
+		#	derecha = true
+	
 	if Input.is_action_pressed("mov_izq"):
-		if derecha:
-			derecha = false
+		if !$pisadas.playing: $pisadas.play()
 		velocity.x -= speed
+		$Arma.disabled = true
+		#if derecha:
+		#	derecha = false
+	
+	if !velocity.x or Input.is_action_just_released("mov_der") or Input.is_action_just_released("mov_izq"):
+		$pisadas.stop()
+	
 	if Input.is_action_pressed("correr") and !corriendo:
 		corriendo = true
 		speed *= 2.7
@@ -50,7 +59,6 @@ func get_input():
 			$Arma.disparar()
 		elif Input.is_action_just_pressed("recargar"):
 			$Arma.recargar()
-		
 
 func _physics_process(delta):
 	get_input()
@@ -59,4 +67,3 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and canJump:
 		if is_on_floor():
 			velocity.y = jump_speed
-	mouse = get_local_mouse_position()
