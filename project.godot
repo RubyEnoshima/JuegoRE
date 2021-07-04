@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Bala",
 "language": "GDScript",
-"path": "res://Escenas/bala.gd"
+"path": "res://Escenas/Armas/bala.gd"
 }, {
 "base": "Area2D",
 "class": "MunicionPistola",

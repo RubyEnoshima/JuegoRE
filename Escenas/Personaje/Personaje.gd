@@ -5,6 +5,8 @@ export (int) var speed = 115
 export (int) var jump_speed = -1800
 export (int) var gravity = 4000
 export var canJump = true
+export var vida = 100
+export var defensa = 1
 
 var derecha = true
 var corriendo = false
@@ -20,8 +22,11 @@ func _ready():
 func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("mov_der"):
+		
 		velocity.x += speed
 	if Input.is_action_pressed("mov_izq"):
+		if derecha:
+			derecha = false
 		velocity.x -= speed
 	if Input.is_action_pressed("correr") and !corriendo:
 		corriendo = true
@@ -29,6 +34,17 @@ func get_input():
 	elif Input.is_action_just_released("correr") and corriendo:
 		corriendo = false
 		speed /= 2.7
+	
+	var mouse = get_global_mouse_position()
+	if mouse.x >= position.x:
+		if !derecha:
+			derecha = true
+		$Sprite.flip_h = !$Sprite.flip_h
+	elif mouse.x < position.x:
+		if derecha:
+			derecha = false
+		$Sprite.flip_h = !$Sprite.flip_h
+	
 	if Inventario.pistola: #Esto esta mal!!!!!!!!!!!!
 		if Input.is_action_just_pressed("disparo"):
 			$Arma.disparar()
