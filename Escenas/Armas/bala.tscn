@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Escenas/Armas/bala.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.8078, 28.969 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 25.6783
+height = 56.5377
 
 [node name="Bala" type="Area2D"]
 scale = Vector2( 0.287644, 0.287644 )
@@ -21,6 +22,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 26.4264, 1.22914 )
+rotation = 1.57245
 shape = SubResource( 1 )
 
 [node name="duracion" type="Timer" parent="."]
