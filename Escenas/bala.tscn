@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenas/bala.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.2793, 20.3188 )
+
+[node name="Bala" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -18.7089
+margin_top = -20.4907
+margin_right = 21.2911
+margin_bottom = 19.5093
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="duracion" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Bala_body_entered"]
+[connection signal="timeout" from="duracion" to="." method="_on_duracion_timeout"]
