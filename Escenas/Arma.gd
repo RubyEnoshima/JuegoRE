@@ -4,7 +4,7 @@ var Bala = preload("res://Escenas/bala.tscn")
 
 export var fireRate = 0.7
 export var municionMax = 7
-export var municionActual = 5
+export var municionActual = 0
 
 var sePuedeDisparar = true
 var recargando = false
@@ -25,7 +25,6 @@ func _process(delta):
 			giro = true
 			$Sprite.flip_v = !$Sprite.flip_v
 		look_at(get_global_mouse_position())
-	print(municionActual)
 
 func disparar():
 	if sePuedeDisparar and municionActual>0 and !recargando:
@@ -44,6 +43,7 @@ func disparar():
 			$no_ammo.play()
 		#$fireRate.start()
 		#sePuedeDisparar = false
+	print(municionActual)
 
 func recargar():
 	if !recargando:

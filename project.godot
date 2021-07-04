@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Escenas/bala.gd"
 }, {
+"base": "Area2D",
+"class": "MunicionPistola",
+"language": "GDScript",
+"path": "res://Escenas/Objetos/MunicionPistola.gd"
+}, {
+"base": "Area2D",
+"class": "ObjetoRecogible",
+"language": "GDScript",
+"path": "res://Escenas/Objetos/ObjetoRecogible.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Personaje",
 "language": "GDScript",
@@ -21,13 +31,15 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bala": "",
+"MunicionPistola": "",
+"ObjetoRecogible": "",
 "Personaje": ""
 }
 
 [application]
 
 config/name="Juego Re"
-run/main_scene="res://main.tscn"
+run/main_scene="res://mapaDebug.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Escenas/Objetos/MunicionPistola.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/Personaje/Personaje.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 492.695, 24.7061 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 56.0734, 294.324 )
+
+[node name="mapaDebug" type="Node2D"]
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Paredes"]
+margin_right = 1027.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Paredes"]
+margin_right = 40.0
+margin_bottom = 599.0
+color = Color( 0.752941, 0.737255, 0.737255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Paredes"]
+margin_left = 11.0
+margin_top = 13.0
+margin_right = 51.0
+margin_bottom = 998.0
+rect_rotation = -90.0
+color = Color( 0.752941, 0.737255, 0.737255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Paredes"]
+margin_left = 11.0
+margin_top = 613.517
+margin_right = 51.0
+margin_bottom = 1598.52
+rect_rotation = -90.0
+color = Color( 0.752941, 0.737255, 0.737255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Paredes"]
+margin_left = 987.767
+margin_right = 1027.77
+margin_bottom = 599.0
+color = Color( 0.752941, 0.737255, 0.737255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 500.059, 598.914 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 514.396, -5.99176 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( -16.4951, 301.627 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes"]
+position = Vector2( 1045.29, 293.201 )
+shape = SubResource( 2 )
+
+[node name="Personaje" parent="." instance=ExtResource( 2 )]
+position = Vector2( 115.191, 545.043 )
+canJump = false
+
+[node name="MunicionPistola" parent="." instance=ExtResource( 1 )]
+position = Vector2( 370, 510 )
+
+[node name="MunicionPistola2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 458, 511 )
