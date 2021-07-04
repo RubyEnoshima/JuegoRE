@@ -1,7 +1,7 @@
 class_name Enemigo
 extends KinematicBody2D
 
-var Sangre = preload("res://Escenas/Objetos/ObjetoRecogible.tscn")
+var Sangre = preload("res://Escenas/Particulas/Sangre.tscn")
 
 export (int) var speed = 115
 export (int) var gravity = 4000
@@ -12,11 +12,8 @@ var derecha = true
 var corriendo = false
 var velocity = Vector2.ZERO
 
-func calculaDano(dano,posicionDano):
+func calculaDano(dano):
 	vida -= dano
-	var emit = Sangre.instance()
-	add_child(emit)
-	emit.global_position = posicionDano
 
 func get_input():
 	velocity.x = 0

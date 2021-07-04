@@ -3,9 +3,11 @@
 [ext_resource path="res://Escenas/Armas/bala.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.2793, 20.3188 )
+extents = Vector2( 30.8078, 28.969 )
 
 [node name="Bala" type="Area2D"]
+scale = Vector2( 0.287644, 0.287644 )
+priority = 5.0
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]

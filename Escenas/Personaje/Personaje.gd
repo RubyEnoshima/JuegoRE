@@ -9,6 +9,7 @@ export var vida = 100
 export var defensa = 1
 
 var derecha = true
+var pitch = false
 var corriendo = false
 var velocity = Vector2.ZERO
 
@@ -18,15 +19,25 @@ func _ready():
 	else:
 		$Arma.visible = false
 
+func pisadas():
+	if corriendo and !pitch:
+		$pisadas.pitch_scale *= 1.25
+		pitch = true
+	elif !corriendo:
+		$pisadas.pitch_scale = 1
+		pitch = false
+	if !$pisadas.playing: 
+		$pisadas.play()
+
 func get_input():
 	velocity.x = 0
 	if Input.is_action_pressed("mov_der"):
-		if !$pisadas.playing: $pisadas.play()
+		pisadas()
 		velocity.x += speed
 		#$Arma.disabled = true
 	
 	if Input.is_action_pressed("mov_izq"):
-		if !$pisadas.playing: $pisadas.play()
+		pisadas()
 		velocity.x -= speed
 		#$Arma.disabled = true
 	
