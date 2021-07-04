@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenas/Enemigos/Enemigo.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.6128, 57.2988 )
+
+[node name="Zombi" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -19.0
+margin_top = -96.0
+margin_right = 21.0
+margin_bottom = 18.0
+color = Color( 0.258824, 0.803922, 0.0117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.707123, -39.2444 )
+shape = SubResource( 1 )

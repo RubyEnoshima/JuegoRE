@@ -23,16 +23,12 @@ func get_input():
 	if Input.is_action_pressed("mov_der"):
 		if !$pisadas.playing: $pisadas.play()
 		velocity.x += speed
-		$Arma.disabled = true
-		#if !derecha:
-		#	derecha = true
+		#$Arma.disabled = true
 	
 	if Input.is_action_pressed("mov_izq"):
 		if !$pisadas.playing: $pisadas.play()
 		velocity.x -= speed
-		$Arma.disabled = true
-		#if derecha:
-		#	derecha = false
+		#$Arma.disabled = true
 	
 	if !velocity.x or Input.is_action_just_released("mov_der") or Input.is_action_just_released("mov_izq"):
 		$pisadas.stop()

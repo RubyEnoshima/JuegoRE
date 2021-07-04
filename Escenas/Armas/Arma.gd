@@ -4,8 +4,9 @@ var Bala = preload("res://Escenas/Armas/bala.tscn")
 
 export var fireRate = 0.7
 export var municionMax = 7
-export var municionActual = 0
+export var municionActual = 7
 export var retroceso = 105
+export var potencia = 1
 
 var sePuedeDisparar = true
 var recargando = false
@@ -15,42 +16,47 @@ var disabled = false
 func _ready():
 	$fireRate.wait_time = fireRate
 
+func mirarRaton():
+	var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
+	if angulo <= 60 and angulo >= -60:
+		if giro:
+			giro = false
+			$Sprite.flip_v = !$Sprite.flip_v
+		look_at(get_global_mouse_position())
+	elif -angulo >= 120 and -angulo <=180 or -angulo >= -180 and -angulo <= -120:
+		if !giro:
+			giro = true
+			$Sprite.flip_v = !$Sprite.flip_v
+		look_at(get_global_mouse_position())
+
 func _process(delta):
-	if !disabled:
-		var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
-		if angulo <= 60 and angulo >= -60:
-			if giro:
-				giro = false
-				$Sprite.flip_v = !$Sprite.flip_v
-			look_at(get_global_mouse_position())
-		elif -angulo >= 120 and -angulo <=180 or -angulo >= -180 and -angulo <= -120:
-			if !giro:
-				giro = true
-				$Sprite.flip_v = !$Sprite.flip_v
-			look_at(get_global_mouse_position())
-	else:
-		if get_parent().derecha:
-			rotation_degrees = 60
-			$Sprite.flip_v = false
-		else:
-			rotation_degrees = 120
-			$Sprite.flip_v = true
+	#if !disabled:
+		mirarRaton()
+	#else:
+	#	if get_parent().derecha:
+	#		rotation_degrees = 60
+	#		$Sprite.flip_v = false
+	#	else:
+	#		rotation_degrees = 120
+	#		$Sprite.flip_v = true
 
 func disparar():
-	if !get_parent().velocity.x:
-		disabled = false
+	#if !get_parent().velocity.x:
+	#	if disabled:
+	#		disabled = false
+	#		mirarRaton()
 		if sePuedeDisparar and municionActual>0 and !recargando:
 			var b=Bala.instance()
 			get_parent().get_parent().add_child(b)
 			b.global_position = $Sprite.global_position
 			b.rotate(rotation)
+			b.armaDisparada = self
 			$sonido.play()
 			$fireRate.start()
 			if get_parent().derecha:
 				get_parent().velocity.x -= retroceso
 			else:
 				get_parent().velocity.x += retroceso
-				
 			sePuedeDisparar = false
 			municionActual-=1
 		elif !municionActual:
