@@ -2,9 +2,7 @@ class_name Personaje
 extends KinematicBody2D
 
 export (int) var speed = 115
-export (int) var jump_speed = -1800
 export (int) var gravity = 4000
-export var canJump = true
 export var vida = 100
 export var defensa = 1
 
@@ -71,6 +69,3 @@ func _physics_process(delta):
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
-	if Input.is_action_just_pressed("ui_up") and canJump:
-		if is_on_floor():
-			velocity.y = jump_speed

@@ -8,6 +8,9 @@ export var municionActual = 7
 export var retroceso = 105
 export var potencia = 1
 
+export var anguloMaxDer = 60
+var anguloMaxIzq = 90*2 - anguloMaxDer 
+
 var sePuedeDisparar = true
 var recargando = false
 var giro = false
@@ -18,12 +21,12 @@ func _ready():
 
 func mirarRaton():
 	var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
-	if angulo <= 60 and angulo >= -60:
+	if angulo <= anguloMaxDer and angulo >= -anguloMaxDer:
 		if giro:
 			giro = false
 			$Sprite.flip_v = !$Sprite.flip_v
 		look_at(get_global_mouse_position())
-	elif -angulo >= 120 and -angulo <=180 or -angulo >= -180 and -angulo <= -120:
+	elif -angulo >= anguloMaxIzq and -angulo <=anguloMaxIzq+anguloMaxDer or -angulo >= -anguloMaxIzq-anguloMaxDer and -angulo <= -anguloMaxIzq:
 		if !giro:
 			giro = true
 			$Sprite.flip_v = !$Sprite.flip_v

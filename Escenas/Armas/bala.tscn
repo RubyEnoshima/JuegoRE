@@ -12,17 +12,17 @@ priority = 5.0
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -18.7089
-margin_top = -20.4907
-margin_right = 21.2911
-margin_bottom = 19.5093
+margin_left = -13.1457
+margin_top = -13.302
+margin_right = 14.8543
+margin_bottom = 14.698
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 26.4264, 1.22914 )
+position = Vector2( 65.7588, -0.614563 )
 rotation = 1.57245
 shape = SubResource( 1 )
 

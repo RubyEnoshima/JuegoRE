@@ -1,34 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Escenas/Particulas/Sangre.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.0518519, 0.355556, 0.814815 )
+offsets = PoolRealArray( 0.037037, 0.42963, 0.711111 )
 colors = PoolColorArray( 0.590909, 0, 0, 1, 1, 0, 0, 1, 0.75, 0.0175781, 0.0175781, 0 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
+[sub_resource type="Curve" id=4]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.911392, 100 ), 2932.58, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
 [sub_resource type="ParticlesMaterial" id=3]
 flag_disable_z = true
 spread = 30.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 45.97
-initial_velocity_random = 0.33
+initial_velocity = 30.0
+initial_velocity_random = 0.51
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-linear_accel = -27.58
-damping = 79.31
-damping_random = 0.15
+damping = 29.89
+damping_random = 1.0
+damping_curve = SubResource( 5 )
 color_ramp = SubResource( 2 )
 
 [node name="Sangre" type="Particles2D"]
 scale = Vector2( 6.09381, 6.83068 )
-emitting = false
-amount = 12
+amount = 15
 lifetime = 0.5
-one_shot = true
-explosiveness = 0.8
-randomness = 0.4
+explosiveness = 0.85
+randomness = 1.0
 process_material = SubResource( 3 )
 script = ExtResource( 1 )

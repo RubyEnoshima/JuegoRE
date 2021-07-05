@@ -1,8 +1,11 @@
 class_name Enemigo
 extends KinematicBody2D
 
-var Sangre = preload("res://Escenas/Particulas/Sangre.tscn")
-
+var a = [
+		 preload("res://Assets/Sonidos/Zombi/zombie_pain0.wav"),
+		 preload("res://Assets/Sonidos/Zombi/zombie_pain1.wav")
+		]
+var tono
 export (int) var speed = 40
 export (int) var gravity = 4000
 export var vida = 7 
@@ -10,17 +13,26 @@ export var vida = 7
 #en este caso, derrotar a un zombi implica dispararle una ronda entera de pistola
 export var defensa = 1
 
-var derecha = true
+export var derecha = true
 var corriendo = false
 var velocity = Vector2.ZERO
 var detectado = false
 var atacando = false
 var dir
 
-func calculaDano(dano,posicion):
+func _ready():
+	if !derecha:
+		scale *= -1
+
+func calculaDano(dano,arma):
 	vida -= dano
+	randomize()
+	$pain.stream = a[randi()%2]
+	$pain.play()
 	if !detectado:
-		if posicion.x > position.x and !derecha or posicion.x <= position.x and derecha:
+		detectado = true
+		dir = arma
+		if (arma.global_position.x > global_position.x and !derecha) or (arma.global_position.x <= global_position.x and derecha):
 			scale.x *= -1
 			derecha = !derecha
 
@@ -30,7 +42,7 @@ func _physics_process(delta):
 		#PUEDEN RESUCITAR!!!!
 	velocity.x = 0
 	if detectado and !atacando:
-		if dir.position.x > position.x:
+		if dir.global_position.x > global_position.x:
 			velocity.x += speed
 		else:
 			velocity.x -= speed
@@ -55,9 +67,9 @@ func _on_danger_body_entered(body):
 		atacando = true
 
 
-func _on_detecta_body_exited(body):
-	if body is Personaje:
-		detectado = false
+#func _on_detecta_body_exited(body):
+#	if body is Personaje:
+#		detectado = false
 
 func _on_danger_body_exited(body):
 	if body is Personaje:
@@ -68,3 +80,5 @@ func _on_detras_body_entered(body):
 	if body is Personaje:
 		scale.x *= -1
 		derecha = !derecha
+		detectado = true
+		dir = body

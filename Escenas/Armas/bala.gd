@@ -18,7 +18,10 @@ func _on_Bala_body_entered(body):
 		var emit = Sangre.instance()
 		get_parent().add_child(emit)
 		emit.global_position = position
-		#if position.x < body.position.x:
-		#	emit.process_material.initial_velocity*=-1
+		randomize()
+		if global_position.x < body.global_position.x:
+			emit.process_material.initial_velocity=rand_range(-30,-45)
+		else:
+			emit.process_material.initial_velocity=rand_range(30,45)
 		queue_free()
-		body.calculaDano(armaDisparada.potencia,armaDisparada.position)
+		body.calculaDano(armaDisparada.potencia,armaDisparada)

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/disparo.wav-ccd4891dbfe942f561b86cd0c67360b4.sample"
+path="res://.import/reload.wav-8d8203106c093c0f110ba0941daf3073.sample"
 
 [deps]
 
-source_file="res://Assets/Sonidos/disparo.wav"
-dest_files=[ "res://.import/disparo.wav-ccd4891dbfe942f561b86cd0c67360b4.sample" ]
+source_file="res://Assets/Sonidos/Pistola/reload.wav"
+dest_files=[ "res://.import/reload.wav-8d8203106c093c0f110ba0941daf3073.sample" ]
 
 [params]
 

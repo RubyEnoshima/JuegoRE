@@ -77,8 +77,7 @@ position = Vector2( 1045.29, 293.201 )
 shape = SubResource( 2 )
 
 [node name="Personaje" parent="." instance=ExtResource( 2 )]
-position = Vector2( 195.4, 426.165 )
-canJump = false
+position = Vector2( 730.292, 429.162 )
 
 [node name="MunicionPistola" parent="." instance=ExtResource( 1 )]
 position = Vector2( 370, 510 )
@@ -87,4 +86,4 @@ position = Vector2( 370, 510 )
 position = Vector2( 458, 511 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 626.583, 496.064 )
+position = Vector2( 150.121, 541.013 )
