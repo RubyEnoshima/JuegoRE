@@ -1,20 +1,23 @@
 class_name ObjetoRecogible
 extends Area2D
 
-var focus = false
 var aura = preload("res://aura.tres")
+var focus = false
+
+func _ready():
+	input_pickable = true
 
 func _process(delta):
-	var mouse = get_global_mouse_position()
-	var width = $Sprite.texture.get_width()*$Sprite.scale.x / 2
-	var height = $Sprite.texture.get_height()*$Sprite.scale.y/2
-	var enFocus = mouse.x >= position.x - width and mouse.x <= position.x + width and mouse.y >= position.y - height and mouse.y <= position.y + height
-	if !focus and enFocus:
-		$Sprite.material = aura
-	elif focus and !enFocus:
-		focus = false
-		$Sprite.material = null
+	if focus and Input.is_action_just_pressed("coger"):
+		interactuar()
 
-func _on_Objeto_body_entered(body):
-	if body is Personaje:
-		queue_free()
+func interactuar():
+	queue_free()
+
+func _on_Objeto_mouse_entered():
+	$Sprite.material = aura
+	focus = true
+
+func _on_Objeto_mouse_exited():
+	$Sprite.material = null
+	focus = false

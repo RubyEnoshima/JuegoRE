@@ -4,5 +4,5 @@
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/aura_width = 4.0
-shader_param/aura_color = Color( 0.0627451, 0.309804, 0.596078, 0.658824 )
+shader_param/aura_width = 10.0
+shader_param/aura_color = Color( 0.596078, 0.0745098, 0.0627451, 0.658824 )

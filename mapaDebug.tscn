@@ -16,6 +16,7 @@ extents = Vector2( 56.0734, 294.324 )
 [node name="ColorRect" type="ColorRect" parent="Paredes"]
 margin_right = 1027.0
 margin_bottom = 599.0
+mouse_filter = 2
 color = Color( 0.121569, 0.113725, 0.113725, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,6 +25,7 @@ __meta__ = {
 [node name="ColorRect2" type="ColorRect" parent="Paredes"]
 margin_right = 40.0
 margin_bottom = 599.0
+mouse_filter = 2
 color = Color( 0.752941, 0.737255, 0.737255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -35,6 +37,7 @@ margin_top = 13.0
 margin_right = 51.0
 margin_bottom = 998.0
 rect_rotation = -90.0
+mouse_filter = 2
 color = Color( 0.752941, 0.737255, 0.737255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -46,6 +49,7 @@ margin_top = 613.517
 margin_right = 51.0
 margin_bottom = 1598.52
 rect_rotation = -90.0
+mouse_filter = 2
 color = Color( 0.752941, 0.737255, 0.737255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,6 +59,7 @@ __meta__ = {
 margin_left = 987.767
 margin_right = 1027.77
 margin_bottom = 599.0
+mouse_filter = 2
 color = Color( 0.752941, 0.737255, 0.737255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,6 +86,5 @@ position = Vector2( 319.756, 511.569 )
 
 [node name="MunicionPistola" parent="." instance=ExtResource( 1 )]
 position = Vector2( 370, 510 )
-
-[node name="MunicionPistola2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 458, 511 )
+collision_layer = 1
+[connection signal="body_entered" from="MunicionPistola" to="MunicionPistola" method="_on_Objeto_body_entered"]
