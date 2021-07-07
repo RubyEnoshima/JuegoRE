@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Escenas/Objetos/ObjetoRecogible.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/Objetos/MunicionPistola.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/9mm_80gr_-_115gr_-_125gr_-_Cartridges_ONLY_05c0c3fb-ebb0-4d8a-8419-8d011df8c8d7_600x400.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.8585, 19.7678 )
+extents = Vector2( 17.2122, 12.5359 )
 
 [node name="MunicionPistola" instance=ExtResource( 1 )]
+scale = Vector2( 1.52541, 1.52541 )
 script = ExtResource( 2 )
 
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 9.75199, -9.35808 )
+scale = Vector2( 0.170975, 0.174771 )
+texture = ExtResource( 3 )
+
 [node name="ColorRect" type="ColorRect" parent="." index="1"]
+visible = false
 margin_left = -19.4454
 margin_top = -18.7383
 margin_right = 20.5546
@@ -20,5 +28,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-position = Vector2( 0.749153, 0.561859 )
+visible = false
+position = Vector2( 9.75459, -9.72824 )
 shape = SubResource( 1 )
