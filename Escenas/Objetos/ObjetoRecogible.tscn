@@ -7,5 +7,26 @@ collision_layer = 1025
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+
+[node name="TextoInteractuado" type="Label" parent="."]
+visible = false
+margin_left = -142.356
+margin_top = -12.5746
+margin_right = 141.644
+margin_bottom = 1.4254
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Jugador" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador"]
 [connection signal="mouse_entered" from="." to="." method="_on_Objeto_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Objeto_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Jugador" to="." method="_on_Jugador_body_entered"]
+[connection signal="body_exited" from="Jugador" to="." method="_on_Jugador_body_exited"]

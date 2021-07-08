@@ -1,0 +1,62 @@
+[gd_scene format=2]
+
+[node name="MenuPausa" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -39.0
+margin_top = -30.0
+margin_right = 1089.0
+margin_bottom = 628.0
+color = Color( 0.133333, 0.0941176, 0.0941176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 122.177
+margin_top = 126.101
+margin_right = 426.177
+margin_bottom = 533.101
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Botones" type="Control" parent="."]
+margin_right = 1027.0
+margin_bottom = 97.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mapas" type="Button" parent="Botones"]
+margin_left = 84.0576
+margin_top = 41.9385
+margin_right = 214.058
+margin_bottom = 61.9385
+rect_scale = Vector2( 1.65681, 1.65681 )
+text = "MAPAS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Opciones" type="Button" parent="Botones"]
+margin_left = 725.357
+margin_top = 41.9385
+margin_right = 855.357
+margin_bottom = 61.9385
+rect_scale = Vector2( 1.65681, 1.65681 )
+text = "OPCIONES"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tesoros" type="Button" parent="Botones"]
+margin_left = 409.117
+margin_top = 43.1984
+margin_right = 539.117
+margin_bottom = 63.1984
+rect_scale = Vector2( 1.65681, 1.65681 )
+text = "TESOROS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
