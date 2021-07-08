@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 var Menu = preload("res://Escenas/Menu/Menu.tscn")
 var enMenu = false
+var m
 
 export (int) var speed = 115
 export (int) var gravity = 4000
@@ -69,15 +70,21 @@ func get_input():
 				derecha = false
 			$Sprite.flip_h = !$Sprite.flip_h
 		
-	
-	if Input.is_action_just_pressed("menu"):
-		var m = Menu.instance()
-		var children = get_parent().get_children()
-		for child in children:
-			child.visible = false
-		get_parent().add_child(m)
-		enMenu = true
-		#get_tree().change_scene("res://Escenas/Menu/Menu.tscn")
+		if Input.is_action_just_pressed("menu") and !$Arma.recargando:
+			m = Menu.instance()
+			var children = get_parent().get_children()
+			for child in children:
+				child.visible = false
+			get_parent().add_child(m)
+			enMenu = true
+			#get_tree().change_scene("res://Escenas/Menu/Menu.tscn")
+	else:
+		if Input.is_action_just_pressed("menu"):
+			m.queue_free()
+			var children = get_parent().get_children()
+			for child in children:
+				child.visible = true
+			enMenu = false
 
 func _physics_process(delta):
 	get_input()
