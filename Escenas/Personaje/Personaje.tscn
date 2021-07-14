@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Escenas/Armas/Arma.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/Personaje/Personaje.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sonidos/footsteps.wav" type="AudioStream" id=3]
+[ext_resource path="res://Escenas/Armas/Escopeta.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.6624, 55.8785 )
@@ -26,7 +27,12 @@ visible = false
 position = Vector2( 0, -32.9633 )
 shape = SubResource( 1 )
 
+[node name="Escopeta" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 0.0323868, -39.8288 )
+
 [node name="Arma" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 0.618057, -53.2056 )
 
 [node name="Sprite" type="Sprite" parent="."]

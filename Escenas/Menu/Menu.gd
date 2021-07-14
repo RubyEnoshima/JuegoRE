@@ -5,6 +5,9 @@ var focus
 var leyendo = false
 var aura = preload("res://Assets/Shaders/objetoMenu.tres")
 
+signal equipar
+signal desequipar
+
 func _ready():
 	var i = 0
 	for objeto in Inventario.objetosMenu:
@@ -33,11 +36,25 @@ func _process(delta):
 		else:
 			leyendo = false
 
-func equipar(objeto):
+func equipar(objeto,sender,id):
 	if Inventario.equipado!=objeto:
 		Inventario.equipado = objeto
+		emit_signal("equipar",objeto)
+		for child in $Objetos.get_children():
+			var popup = child.get_popup()
+			for i in range(popup.get_item_count()):
+				if popup.get_item_text(i)=="Desequipar":
+					 popup.set_item_text(i,"Equipar")
+		sender.get_popup().set_item_text(id,"Desequipar")
 	else:
 		Inventario.equipado = ""
+		emit_signal("desequipar")
+		for child in $Objetos.get_children():
+			var popup = child.get_popup()
+			for i in range(popup.get_item_count()):
+				if popup.get_item_text(i)=="Equipar":
+					 popup.set_item_text(i,"Desequipar")
+		sender.get_popup().set_item_text(id,"Equipar")
 
 func examinar(objeto):
 	$Examinar.text = ExaminarDialogos.dialogos[objeto]
@@ -51,7 +68,7 @@ func acciones(id,sender,objeto):
 	var accion = sender.get_popup().get_item_text(id)
 	if accion == "Examinar": examinar(objeto)
 	elif accion == "Combinar": combinar(objeto)
-	elif accion == "Equipar" or accion == "Desequipar": equipar(objeto)
+	elif accion == "Equipar" or accion == "Desequipar": equipar(objeto,sender,id)
 
 func mouseEntra(objeto):
 	objeto.material = aura

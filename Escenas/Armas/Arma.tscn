@@ -6,8 +6,6 @@
 [ext_resource path="res://Assets/Sonidos/Pistola/disparo.wav" type="AudioStream" id=4]
 [ext_resource path="res://Escenas/Armas/Arma.gd" type="Script" id=5]
 
-
-
 [node name="Arma" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -27,15 +25,5 @@ scale = Vector2( 0.12887, 0.12887 )
 texture = ExtResource( 3 )
 
 [node name="fireRate" type="Timer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -4.39131
-margin_top = -3.48496
-margin_right = 4.60869
-margin_bottom = 4.51504
-color = Color( 0.0392157, 0.0313726, 1, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="finished" from="reload" to="." method="_on_reload_finished"]
 [connection signal="timeout" from="fireRate" to="." method="_on_fireRate_timeout"]

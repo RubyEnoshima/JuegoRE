@@ -93,9 +93,9 @@ __meta__ = {
 
 [node name="Label3" type="Label" parent="Labels"]
 margin_left = 204.403
-margin_top = 279.836
+margin_top = 302.463
 margin_right = 244.403
-margin_bottom = 293.836
+margin_bottom = 316.463
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 __meta__ = {
@@ -104,9 +104,9 @@ __meta__ = {
 
 [node name="Label4" type="Label" parent="Labels"]
 margin_left = 355.423
-margin_top = 279.836
+margin_top = 302.463
 margin_right = 395.423
-margin_bottom = 293.836
+margin_bottom = 316.463
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 __meta__ = {
@@ -115,9 +115,9 @@ __meta__ = {
 
 [node name="Label5" type="Label" parent="Labels"]
 margin_left = 204.403
-margin_top = 386.022
+margin_top = 444.005
 margin_right = 244.403
-margin_bottom = 400.022
+margin_bottom = 458.005
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 __meta__ = {
@@ -126,9 +126,9 @@ __meta__ = {
 
 [node name="Label6" type="Label" parent="Labels"]
 margin_left = 355.423
-margin_top = 386.022
+margin_top = 444.005
 margin_right = 395.423
-margin_bottom = 400.022
+margin_bottom = 458.005
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 __meta__ = {
@@ -137,9 +137,9 @@ __meta__ = {
 
 [node name="Label7" type="Label" parent="Labels"]
 margin_left = 204.403
-margin_top = 464.511
+margin_top = 564.92
 margin_right = 244.403
-margin_bottom = 478.511
+margin_bottom = 578.92
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 __meta__ = {
@@ -148,9 +148,9 @@ __meta__ = {
 
 [node name="Label8" type="Label" parent="Labels"]
 margin_left = 355.423
-margin_top = 464.511
+margin_top = 564.92
 margin_right = 395.423
-margin_bottom = 478.511
+margin_bottom = 578.92
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 __meta__ = {

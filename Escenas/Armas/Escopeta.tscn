@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Escenas/Armas/Arma.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Objetos/escopeta.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/Armas/Escopeta.gd" type="Script" id=3]
+
+[node name="Escopeta" instance=ExtResource( 1 )]
+scale = Vector2( 1.32751, 1.32751 )
+script = ExtResource( 3 )
+nombreArma = "Escopeta"
+fireRate = 1.0
+municionMax = 4
+retroceso = 110
+potencia = 3
+anguloMaxDer = 30
+
+[node name="Sprite" parent="." index="3"]
+position = Vector2( 25.1366, -0.268088 )
+scale = Vector2( 0.193152, 0.193152 )
+texture = ExtResource( 2 )

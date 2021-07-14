@@ -5,5 +5,5 @@ signal equipar
 
 func interactuar():
 	Inventario.anadir("Pistola",0)
-	emit_signal("equipar")
+	emit_signal("equipar","Pistola")
 	.interactuar()

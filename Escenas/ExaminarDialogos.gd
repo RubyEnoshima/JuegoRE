@@ -9,5 +9,7 @@ extends Node
 
 var dialogos = {
 	"Pistola": "Una pistola que encontré al lado de un cadáver. No estoy muy seguro de cómo usarla.",
-	"balasPistola": "Balas para la pistola, creo. Caben en ella, así que deben serlo."
+	"balasPistola": "Balas para la pistola, creo. Caben en ella, así que deben serlo.",
+	"Escopeta": "Un arma bastante superior a la pistola. Parece que dispara en área. Aún no sé manejarla bien.",
+	"balasEscopeta": "Balas para la escopeta. Pensé que serían mucho más grandes."
 }

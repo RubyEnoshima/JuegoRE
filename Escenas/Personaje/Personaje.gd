@@ -16,10 +16,10 @@ var corriendo = false
 var velocity = Vector2.ZERO
 
 func _ready():
-	if Inventario.equipado == "pistola":
-		$Arma.visible = true #No!!!!!!!!!!!!!!!!!
-	else:
-		$Arma.visible = false
+	if Inventario.equipado == "Pistola":
+		$Arma.visible = true
+	elif Inventario.equipado == "Escopeta":
+		$Escopeta.visible = true
 
 func pisadas():
 	if corriendo and !pitch:
@@ -44,11 +44,17 @@ func get_input():
 			velocity.x -= speed
 			#$Arma.disabled = true
 	
-		if $Arma.visible: #Esto esta mal!!!!!!!!!!!!
+		if $Arma.visible or $Escopeta.visible: 
 			if Input.is_action_just_pressed("disparo"):
-				$Arma.disparar()
+				if $Arma.visible:
+					$Arma.disparar()
+				elif $Escopeta.visible:
+					$Escopeta.disparar()
 			elif Input.is_action_just_pressed("recargar"):
-				$Arma.recargar()
+				if $Arma.visible:
+					$Arma.recargar()
+				elif $Escopeta.visible:
+					$Escopeta.recargar()
 		
 		if !velocity.x or Input.is_action_just_released("mov_der") or Input.is_action_just_released("mov_izq"):
 			$pisadas.stop()
@@ -76,6 +82,8 @@ func get_input():
 			for child in children:
 				child.visible = false
 			get_parent().add_child(m)
+			m.connect("equipar",self,"equipar")
+			m.connect("desequipar",self,"desequipar")
 			enMenu = true
 			#get_tree().change_scene("res://Escenas/Menu/Menu.tscn")
 	else:
@@ -93,6 +101,12 @@ func _physics_process(delta):
 
 func desequipar():
 	$Arma.visible = false
+	$Escopeta.visible = false
 
-func equipar():
-	$Arma.visible = true
+func equipar(objeto):
+	if objeto == "Pistola":
+		$Arma.visible = true
+		$Escopeta.visible = false
+	elif objeto == "Escopeta":
+		$Arma.visible = false
+		$Escopeta.visible = true

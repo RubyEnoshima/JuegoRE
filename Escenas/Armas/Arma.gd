@@ -2,16 +2,16 @@ extends Node2D
 
 var Bala = preload("res://Escenas/Armas/bala.tscn")
 
-var nombreArma = "Pistola"
+export var nombreArma = "Pistola"
 
 export var fireRate = 0.7
 export var municionMax = 7
-var municionActual = Inventario.municionActual[nombreArma]
 export var retroceso = 105
 export var potencia = 1
+onready var municionActual = Inventario.municionActual[nombreArma]
 
 export var anguloMaxDer = 60
-var anguloMaxIzq = 90*2 - anguloMaxDer 
+onready var anguloMaxIzq = 90*2 - anguloMaxDer 
 
 var sePuedeDisparar = true
 var recargando = false
@@ -23,12 +23,13 @@ func _ready():
 
 func mirarRaton():
 	var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
+	if nombreArma=="Escopeta": print(angulo)
 	if angulo <= anguloMaxDer and angulo >= -anguloMaxDer:
 		if giro:
 			giro = false
 			$Sprite.flip_v = !$Sprite.flip_v
 		look_at(get_global_mouse_position())
-	elif -angulo >= anguloMaxIzq and -angulo <=anguloMaxIzq+anguloMaxDer or -angulo >= -anguloMaxIzq-anguloMaxDer and -angulo <= -anguloMaxIzq:
+	elif !(angulo < -anguloMaxDer and angulo > -anguloMaxIzq) and !(angulo < anguloMaxIzq and angulo > anguloMaxDer):
 		if !giro:
 			giro = true
 			$Sprite.flip_v = !$Sprite.flip_v
@@ -88,6 +89,9 @@ func recargar():
 			$reload.play()
 			Inventario.municionActual[nombreArma] = municionActual
 			Inventario.balas["balas"+nombreArma] = balasInv
+			if balasInv == 0:
+				Inventario.objetosMenu.erase("balas"+nombreArma)
+				
 		elif !municionActual and !balasInv:
 			$no_ammo.play()
 
