@@ -23,7 +23,6 @@ func _ready():
 
 func mirarRaton():
 	var angulo = rad2deg(get_global_mouse_position().angle_to_point(global_position))
-	if nombreArma=="Escopeta": print(angulo)
 	if angulo <= anguloMaxDer and angulo >= -anguloMaxDer:
 		if giro:
 			giro = false
