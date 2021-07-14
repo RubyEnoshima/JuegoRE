@@ -18,13 +18,12 @@ var maxBaul = 50
 
 func _ready():
 	OS.center_window()
-	OS.alert("Hola")
 
 func anadir(objeto,cantidad):
 	if objetosMenu.size() < maxObjetos:
 		if objeto.begins_with("balas"):
 			balas[objeto] += cantidad
-			if !objetosMenu.has("balasPistola"):
+			if !objetosMenu.has(objeto):
 				objetosMenu.append(objeto)
 		else:
 			objetosMenu.append(objeto)

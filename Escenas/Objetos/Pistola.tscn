@@ -5,7 +5,7 @@
 [ext_resource path="res://Escenas/Objetos/Pistola.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 247.0
+radius = 101.71
 
 [node name="Pistola" instance=ExtResource( 1 )]
 script = ExtResource( 3 )

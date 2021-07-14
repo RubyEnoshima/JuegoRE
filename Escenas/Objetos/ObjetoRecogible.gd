@@ -1,7 +1,7 @@
 class_name ObjetoRecogible
 extends Area2D
 
-var aura = preload("res://aura.tres")
+var aura = preload("res://Assets/Shaders/objetoRecogible.tres")
 var interactuado = false
 var focus = false
 var jugadorCerca = false

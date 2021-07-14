@@ -10,16 +10,19 @@ margin_left = -39.0
 margin_top = -30.0
 margin_right = 1089.0
 margin_bottom = 628.0
+mouse_filter = 2
 color = Color( 0.133333, 0.0941176, 0.0941176, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 122.177
-margin_top = 126.101
-margin_right = 426.177
-margin_bottom = 533.101
+margin_left = 99.0
+margin_top = 68.0
+margin_right = 453.0
+margin_bottom = 591.0
+mouse_filter = 2
+color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,9 +36,9 @@ __meta__ = {
 
 [node name="Mapas" type="Button" parent="Botones"]
 margin_left = 84.0576
-margin_top = 41.9385
+margin_top = 18.4354
 margin_right = 214.058
-margin_bottom = 61.9385
+margin_bottom = 38.4354
 rect_scale = Vector2( 1.65681, 1.65681 )
 text = "MAPAS"
 __meta__ = {
@@ -44,9 +47,9 @@ __meta__ = {
 
 [node name="Opciones" type="Button" parent="Botones"]
 margin_left = 725.357
-margin_top = 41.9385
+margin_top = 18.4354
 margin_right = 855.357
-margin_bottom = 61.9385
+margin_bottom = 38.4354
 rect_scale = Vector2( 1.65681, 1.65681 )
 text = "OPCIONES"
 __meta__ = {
@@ -55,135 +58,211 @@ __meta__ = {
 
 [node name="Tesoros" type="Button" parent="Botones"]
 margin_left = 409.117
-margin_top = 43.1984
+margin_top = 19.6953
 margin_right = 539.117
-margin_bottom = 63.1984
+margin_bottom = 39.6953
 rect_scale = Vector2( 1.65681, 1.65681 )
 text = "TESOROS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label1" type="Label" parent="Labels"]
+margin_left = 204.403
+margin_top = 189.696
+margin_right = 244.403
+margin_bottom = 203.696
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Labels"]
+margin_left = 355.423
+margin_top = 189.696
+margin_right = 395.423
+margin_bottom = 203.696
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Labels"]
+margin_left = 204.403
+margin_top = 279.836
+margin_right = 244.403
+margin_bottom = 293.836
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Labels"]
+margin_left = 355.423
+margin_top = 279.836
+margin_right = 395.423
+margin_bottom = 293.836
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Labels"]
+margin_left = 204.403
+margin_top = 386.022
+margin_right = 244.403
+margin_bottom = 400.022
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Labels"]
+margin_left = 355.423
+margin_top = 386.022
+margin_right = 395.423
+margin_bottom = 400.022
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Labels"]
+margin_left = 204.403
+margin_top = 464.511
+margin_right = 244.403
+margin_bottom = 478.511
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="Labels"]
+margin_left = 355.423
+margin_top = 464.511
+margin_right = 395.423
+margin_bottom = 478.511
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Objetos" type="Node2D" parent="."]
 
-[node name="Sprite1" type="Sprite" parent="Objetos"]
-position = Vector2( 186.468, 173.869 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite2" type="Sprite" parent="Objetos"]
-position = Vector2( 339.975, 173.869 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite3" type="Sprite" parent="Objetos"]
-position = Vector2( 186.468, 253.959 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite4" type="Sprite" parent="Objetos"]
-position = Vector2( 339.975, 253.959 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite5" type="Sprite" parent="Objetos"]
-position = Vector2( 186.468, 358.077 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite6" type="Sprite" parent="Objetos"]
-position = Vector2( 339.975, 358.077 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite7" type="Sprite" parent="Objetos"]
-position = Vector2( 186.468, 438.167 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Sprite8" type="Sprite" parent="Objetos"]
-position = Vector2( 339.975, 438.167 )
-scale = Vector2( 0.249263, 0.249263 )
-
-[node name="Labels" type="Node" parent="Objetos"]
-
-[node name="Label1" type="Label" parent="Objetos/Labels"]
-margin_left = 204.403
-margin_top = 189.696
-margin_right = 244.403
-margin_bottom = 203.696
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite1" type="MenuButton" parent="Objetos"]
+margin_left = 139.376
+margin_top = 97.7556
+margin_right = 250.376
+margin_bottom = 194.756
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Objetos/Labels"]
-margin_left = 355.423
-margin_top = 189.696
-margin_right = 395.423
-margin_bottom = 203.696
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite2" type="MenuButton" parent="Objetos"]
+margin_left = 306.254
+margin_top = 97.7556
+margin_right = 417.254
+margin_bottom = 194.756
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="Objetos/Labels"]
-margin_left = 204.403
-margin_top = 279.836
-margin_right = 244.403
-margin_bottom = 293.836
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite3" type="MenuButton" parent="Objetos"]
+margin_left = 139.376
+margin_top = 222.206
+margin_right = 250.376
+margin_bottom = 319.206
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="Objetos/Labels"]
-margin_left = 355.423
-margin_top = 279.836
-margin_right = 395.423
-margin_bottom = 293.836
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite4" type="MenuButton" parent="Objetos"]
+margin_left = 306.254
+margin_top = 222.206
+margin_right = 417.254
+margin_bottom = 319.206
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="Objetos/Labels"]
-margin_left = 204.403
-margin_top = 386.022
-margin_right = 244.403
-margin_bottom = 400.022
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite5" type="MenuButton" parent="Objetos"]
+margin_left = 139.376
+margin_top = 352.314
+margin_right = 250.376
+margin_bottom = 449.314
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="Objetos/Labels"]
-margin_left = 355.423
-margin_top = 386.022
-margin_right = 395.423
-margin_bottom = 400.022
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite6" type="MenuButton" parent="Objetos"]
+margin_left = 306.254
+margin_top = 352.314
+margin_right = 417.254
+margin_bottom = 449.314
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="Objetos/Labels"]
-margin_left = 204.403
-margin_top = 464.511
-margin_right = 244.403
-margin_bottom = 478.511
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite7" type="MenuButton" parent="Objetos"]
+margin_left = 139.376
+margin_top = 483.836
+margin_right = 250.376
+margin_bottom = 580.836
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label8" type="Label" parent="Objetos/Labels"]
-margin_left = 355.423
-margin_top = 464.511
-margin_right = 395.423
-margin_bottom = 478.511
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+[node name="Sprite8" type="MenuButton" parent="Objetos"]
+margin_left = 306.254
+margin_top = 483.836
+margin_right = 417.254
+margin_bottom = 580.836
+rect_scale = Vector2( 0.916801, 0.916801 )
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Examinar" type="Label" parent="."]
+margin_left = 499.757
+margin_top = 434.971
+margin_right = 699.757
+margin_bottom = 487.971
+rect_scale = Vector2( 2.12196, 2.12196 )
+autowrap = true
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

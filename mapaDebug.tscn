@@ -82,9 +82,6 @@ shape = SubResource( 2 )
 position = Vector2( 1045.29, 293.201 )
 shape = SubResource( 2 )
 
-[node name="Personaje" parent="." instance=ExtResource( 2 )]
-position = Vector2( 111.806, 541.73 )
-
 [node name="MunicionPistola" parent="." instance=ExtResource( 1 )]
 position = Vector2( 749.288, 479.276 )
 
@@ -96,7 +93,10 @@ position = Vector2( 816.034, 427.362 )
 
 [node name="Pistola" parent="." instance=ExtResource( 3 )]
 position = Vector2( 370.544, 506.281 )
+
+[node name="Personaje" parent="." instance=ExtResource( 2 )]
+position = Vector2( 111.806, 541.73 )
 [connection signal="body_entered" from="MunicionPistola" to="MunicionPistola" method="_on_Objeto_body_entered"]
 [connection signal="body_entered" from="MunicionPistola2" to="MunicionPistola2" method="_on_Objeto_body_entered"]
 [connection signal="body_entered" from="MunicionPistola3" to="MunicionPistola3" method="_on_Objeto_body_entered"]
-[connection signal="equipar" from="Pistola" to="Personaje" method="_on_Pistola_equipar"]
+[connection signal="equipar" from="Pistola" to="Personaje" method="equipar"]

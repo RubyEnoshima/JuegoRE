@@ -8,7 +8,7 @@
 extents = Vector2( 17.2122, 12.5359 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 93.0297
+radius = 63.4836
 
 [node name="MunicionPistola" instance=ExtResource( 1 )]
 scale = Vector2( 1.52541, 1.52541 )

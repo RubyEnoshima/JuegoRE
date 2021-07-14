@@ -91,6 +91,8 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+func desequipar():
+	$Arma.visible = false
 
-func _on_Pistola_equipar():
+func equipar():
 	$Arma.visible = true

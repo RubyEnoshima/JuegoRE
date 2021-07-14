@@ -63,6 +63,11 @@ config/icon="res://icon.png"
 [autoload]
 
 Inventario="*res://Escenas/Inventario.tscn"
+ExaminarDialogos="*res://Escenas/ExaminarDialogos.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
