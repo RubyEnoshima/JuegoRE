@@ -16,7 +16,7 @@ var corriendo = false
 var velocity = Vector2.ZERO
 
 func _ready():
-	if Inventario.pistola:
+	if Inventario.equipado == "pistola":
 		$Arma.visible = true #No!!!!!!!!!!!!!!!!!
 	else:
 		$Arma.visible = false
@@ -44,7 +44,7 @@ func get_input():
 			velocity.x -= speed
 			#$Arma.disabled = true
 	
-		if Inventario.pistola: #Esto esta mal!!!!!!!!!!!!
+		if $Arma.visible: #Esto esta mal!!!!!!!!!!!!
 			if Input.is_action_just_pressed("disparo"):
 				$Arma.disparar()
 			elif Input.is_action_just_pressed("recargar"):
@@ -90,3 +90,7 @@ func _physics_process(delta):
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+
+func _on_Pistola_equipar():
+	$Arma.visible = true

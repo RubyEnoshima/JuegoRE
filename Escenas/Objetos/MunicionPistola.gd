@@ -4,5 +4,5 @@ extends "res://Escenas/Objetos/ObjetoRecogible.gd"
 export var cantidad = 7
 
 func interactuar():
-	Inventario.balasPistola += cantidad
+	Inventario.anadir("balasPistola",7)
 	.interactuar()

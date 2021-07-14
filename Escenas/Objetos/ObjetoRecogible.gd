@@ -22,9 +22,12 @@ func _process(delta):
 
 func interactuar():
 	interactuado = true
-	$Sprite.queue_free()
-	$TextoInteractuado.visible = true
-	$Timer.start()
+	if $TextoInteractuado.text != "":
+		$Sprite.queue_free()
+		$TextoInteractuado.visible = true
+		$Timer.start()
+	else:
+		queue_free()
 
 func _on_Objeto_mouse_entered():
 	if !interactuado and jugadorCerca:

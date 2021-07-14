@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/9mm_80gr_-_115gr_-_125gr_-_Cartridges_ONLY_05c0c3fb-ebb0-4d8a-8419-8d011df8c8d7_600x400.png-c2116d6860449555a472607958f30790.stex"
+path="res://.import/pistola.png-6b5cfa14a3f91595b81e5f8295f42cf7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/9mm_80gr_-_115gr_-_125gr_-_Cartridges_ONLY_05c0c3fb-ebb0-4d8a-8419-8d011df8c8d7_600x400.png"
-dest_files=[ "res://.import/9mm_80gr_-_115gr_-_125gr_-_Cartridges_ONLY_05c0c3fb-ebb0-4d8a-8419-8d011df8c8d7_600x400.png-c2116d6860449555a472607958f30790.stex" ]
+source_file="res://Assets/Sprites/Objetos/pistola.png"
+dest_files=[ "res://.import/pistola.png-6b5cfa14a3f91595b81e5f8295f42cf7.stex" ]
 
 [params]
 

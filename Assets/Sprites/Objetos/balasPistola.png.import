@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/unnamed.png-521039f9d1fe54f1c8bfa9cc345a445d.stex"
+path="res://.import/balasPistola.png-8343e51ef83d4285606011b60389e295.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/unnamed.png"
-dest_files=[ "res://.import/unnamed.png-521039f9d1fe54f1c8bfa9cc345a445d.stex" ]
+source_file="res://Assets/Sprites/Objetos/balasPistola.png"
+dest_files=[ "res://.import/balasPistola.png-8343e51ef83d4285606011b60389e295.stex" ]
 
 [params]
 

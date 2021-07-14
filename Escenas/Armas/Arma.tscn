@@ -2,9 +2,11 @@
 
 [ext_resource path="res://Assets/Sonidos/Pistola/no_ammo_pistola.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Sonidos/Pistola/reload.wav" type="AudioStream" id=2]
-[ext_resource path="res://Assets/Sprites/unnamed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objetos/pistola.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sonidos/Pistola/disparo.wav" type="AudioStream" id=4]
 [ext_resource path="res://Escenas/Armas/Arma.gd" type="Script" id=5]
+
+
 
 [node name="Arma" type="Node2D"]
 script = ExtResource( 5 )

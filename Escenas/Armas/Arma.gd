@@ -2,9 +2,11 @@ extends Node2D
 
 var Bala = preload("res://Escenas/Armas/bala.tscn")
 
+var nombreArma = "Pistola"
+
 export var fireRate = 0.7
 export var municionMax = 7
-export var municionActual = 7
+var municionActual = Inventario.municionActual[nombreArma]
 export var retroceso = 105
 export var potencia = 1
 
@@ -62,28 +64,31 @@ func disparar():
 				get_parent().velocity.x += retroceso
 			sePuedeDisparar = false
 			municionActual-=1
+			Inventario.municionActual[nombreArma] -= 1
 		elif !municionActual:
-			if Inventario.balasPistola>0:
+			if Inventario.balas["balas"+nombreArma]>0:
 				recargar()
 			else:
 				$no_ammo.play()
 			#$fireRate.start()
 			#sePuedeDisparar = false
-		print(municionActual)
 
 func recargar():
 	if !recargando:
-		if municionActual < municionMax and Inventario.balasPistola>0:
+		var balasInv = Inventario.balas["balas"+nombreArma]
+		if municionActual < municionMax and balasInv>0:
 			recargando = true
 			var balasNecesarias = municionMax - municionActual
-			if Inventario.balasPistola >= balasNecesarias:
+			if balasInv >= balasNecesarias:
 				municionActual += balasNecesarias
-				Inventario.balasPistola -= balasNecesarias
+				balasInv -= balasNecesarias
 			else:
-				municionActual += Inventario.balasPistola
-				Inventario.balasPistola = 0
+				municionActual += balasInv
+				balasInv = 0
 			$reload.play()
-		elif !municionActual and !Inventario.balasPistola:
+			Inventario.municionActual[nombreArma] = municionActual
+			Inventario.balas["balas"+nombreArma] = balasInv
+		elif !municionActual and !balasInv:
 			$no_ammo.play()
 
 func _on_fireRate_timeout():
